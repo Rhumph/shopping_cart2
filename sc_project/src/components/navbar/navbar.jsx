@@ -1,28 +1,25 @@
 import { Link } from "react-router-dom";
-import HomePage from "../../pages/home_page/home_page.jsx";
-import CartPage from "../../pages/cart_page/cart_page.jsx";
-import ShoppingPage from "../../pages/shopping_page/shopping_page.jsx";
-import router from "../../utils/routes.jsx";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; 
+import "./navbar.css";
+import { ShoppingCartContext } from "../shopping_cart/shopping_cart";
+import { useContext } from "react";
 
 function Navbar() {
+  const {cart} = useContext(ShoppingCartContext);
+
   return (
-    <div>
-    <h1>Hello</h1>
+    // <ShoppingCartProvider>
     <nav>
-      <ul>
-        <li>
-          <Link to="/home">Home</Link>
-        </li>
-        <li>
-          <Link to="/cart">Cart</Link>
-        </li>
-        <li>
-          <Link to="/shopping">Shopping</Link>
-        </li>
-      </ul>
+      <div className="nav-links">
+        <div className="page-links">
+          <Link to="/home" className="link">Home</Link>
+          <Link to="/shopping" className="link">Shopping</Link>
+        </div>
+        <div className="cart-link">
+          <Link to="/cart" className="link">Cart: {cart.cartLength}</Link>
+        </div>
+      </div>
     </nav>
-  </div>
+    // </ShoppingCartProvider>
   );
 }
 

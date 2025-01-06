@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./product_cards.css";
 
 function ProductCard({ product }) {
   const prodimgurl = product.image;
@@ -33,15 +34,16 @@ function ProductCard({ product }) {
   if (error) return <p>A network error was encountered: {error.message}</p>;
 
   return (
-    <div>
-      <div>
-        <img src={imageURL} alt="product picture" />
-        <h2>{product.name}</h2>
-        <p>{product.description}</p>
-        <p>Price: ${product.price}</p>
-        <button>Add to Cart</button>
+      <div className="product-card">
+        <img className="product-image" src={imageURL} alt="product picture" />
+        <h2 className="product-title">{product.title}</h2>
+        <p className="product-description">{product.description}</p>
+        <p className="product-price">Price: ${product.price}</p>
+        <div className="add-field">
+        <input type="number" name="product-quantity" id="product-quantity" placeholder="Quantity"/>
+        <button className="add-to-cart-button" >Add</button>
+        </div>
       </div>
-    </div>
   );
 }
 

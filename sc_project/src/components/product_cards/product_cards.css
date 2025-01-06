@@ -1,0 +1,101 @@
+.product-card { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100%;
+    height: 90%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card:hover {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+    /* transform: translateY(-10px); */
+    transition: transform 0.3s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: auto;
+    object-fit:fill;
+    border-radius: 0.5rem;
+}
+
+.product-title{ 
+    font-size: 1rem;
+    font-weight: 9000;
+    color: #333;
+    margin: 1rem 0;
+}
+
+.product-description {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 1rem 0;
+    overflow: hidden;
+    max-height: 100px;
+}
+
+.add-field { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+#product-quantity {
+    width: 25%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    text-align: center;
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    -moz-appearance: textfield; /* Remove default styling in Firefox */
+}
+
+/* Style the increment arrows in WebKit browsers */
+#product-quantity::-webkit-inner-spin-button,
+#product-quantity::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Custom styling for increment arrows */
+#product-quantity::after {
+    content: '▲';
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    pointer-events: none;
+    color: #333;
+}
+
+#product-quantity::before {
+    content: '▼';
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    pointer-events: none;
+    color: #333;
+}
+
+.add-to-cart-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    width: 50%;
+}
